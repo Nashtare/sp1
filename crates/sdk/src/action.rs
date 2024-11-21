@@ -143,25 +143,25 @@ impl<'a> Prove<'a> {
     }
 
     /// Set the proof kind to the core mode. This is the default.
-    pub fn core(mut self) -> Self {
+    pub const fn core(mut self) -> Self {
         self.kind = SP1ProofKind::Core;
         self
     }
 
     /// Set the proof kind to the compressed mode.
-    pub fn compressed(mut self) -> Self {
+    pub const fn compressed(mut self) -> Self {
         self.kind = SP1ProofKind::Compressed;
         self
     }
 
     /// Set the proof mode to the plonk bn254 mode.
-    pub fn plonk(mut self) -> Self {
+    pub const fn plonk(mut self) -> Self {
         self.kind = SP1ProofKind::Plonk;
         self
     }
 
     /// Set the proof mode to the groth16 bn254 mode.
-    pub fn groth16(mut self) -> Self {
+    pub const fn groth16(mut self) -> Self {
         self.kind = SP1ProofKind::Groth16;
         self
     }
@@ -190,19 +190,19 @@ impl<'a> Prove<'a> {
     }
 
     /// Set the shard size for proving.
-    pub fn shard_size(mut self, value: usize) -> Self {
+    pub const fn shard_size(mut self, value: usize) -> Self {
         self.core_opts.shard_size = value;
         self
     }
 
     /// Set the shard batch size for proving.
-    pub fn shard_batch_size(mut self, value: usize) -> Self {
+    pub const fn shard_batch_size(mut self, value: usize) -> Self {
         self.core_opts.shard_batch_size = value;
         self
     }
 
     /// Set whether we should reconstruct commitments while proving.
-    pub fn reconstruct_commitments(mut self, value: bool) -> Self {
+    pub const fn reconstruct_commitments(mut self, value: bool) -> Self {
         self.core_opts.reconstruct_commitments = value;
         self
     }
@@ -219,7 +219,7 @@ impl<'a> Prove<'a> {
     /// Set the timeout for the proof's generation.
     ///
     /// This parameter is only used when the prover is run in network mode.
-    pub fn timeout(mut self, timeout: Duration) -> Self {
+    pub const fn timeout(mut self, timeout: Duration) -> Self {
         self.timeout = Some(timeout);
         self
     }

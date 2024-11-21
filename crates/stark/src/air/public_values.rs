@@ -74,7 +74,7 @@ impl PublicValues<u32, u32> {
 
     /// Resets the public values to zero.
     #[must_use]
-    pub fn reset(&self) -> Self {
+    pub const fn reset(&self) -> Self {
         let mut copy = *self;
         copy.shard = 0;
         copy.execution_shard = 0;

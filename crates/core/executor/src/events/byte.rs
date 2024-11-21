@@ -119,7 +119,7 @@ pub trait ByteRecord {
 impl ByteLookupEvent {
     /// Creates a new `ByteLookupEvent`.
     #[must_use]
-    pub fn new(shard: u32, opcode: ByteOpcode, a1: u16, a2: u8, b: u8, c: u8) -> Self {
+    pub const fn new(shard: u32, opcode: ByteOpcode, a1: u16, a2: u8, b: u8, c: u8) -> Self {
         Self { shard, opcode, a1, a2, b, c }
     }
 }

@@ -88,7 +88,7 @@ pub enum MemoryRecordEnum {
 impl MemoryRecordEnum {
     /// Retrieve the current memory record.
     #[must_use]
-    pub fn current_record(&self) -> MemoryRecord {
+    pub const fn current_record(&self) -> MemoryRecord {
         match self {
             MemoryRecordEnum::Read(record) => MemoryRecord {
                 shard: record.shard,
@@ -105,7 +105,7 @@ impl MemoryRecordEnum {
 
     /// Retrieve the previous memory record.
     #[must_use]
-    pub fn previous_record(&self) -> MemoryRecord {
+    pub const fn previous_record(&self) -> MemoryRecord {
         match self {
             MemoryRecordEnum::Read(record) => MemoryRecord {
                 shard: record.prev_shard,

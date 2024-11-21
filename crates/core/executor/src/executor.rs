@@ -271,7 +271,7 @@ impl<'a> Executor<'a> {
 
     /// Prepare a `HookEnv` for use by hooks.
     #[must_use]
-    pub fn hook_env<'b>(&'b self) -> HookEnv<'b, 'a> {
+    pub const fn hook_env<'b>(&'b self) -> HookEnv<'b, 'a> {
         HookEnv { runtime: self }
     }
 
@@ -376,7 +376,7 @@ impl<'a> Executor<'a> {
     /// Get the current shard.
     #[must_use]
     #[inline]
-    pub fn shard(&self) -> u32 {
+    pub const fn shard(&self) -> u32 {
         self.state.current_shard
     }
 
@@ -1676,7 +1676,7 @@ pub const fn align(addr: u32) -> u32 {
     addr - addr % 4
 }
 
-fn log2_ceil_usize(n: usize) -> usize {
+const fn log2_ceil_usize(n: usize) -> usize {
     (usize::BITS - n.saturating_sub(1).leading_zeros()) as usize
 }
 

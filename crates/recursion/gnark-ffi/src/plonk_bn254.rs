@@ -24,7 +24,7 @@ pub struct PlonkBn254Prover;
 
 impl PlonkBn254Prover {
     /// Creates a new [PlonkBn254Prover].
-    pub fn new() -> Self {
+    pub const fn new() -> Self {
         Self
     }
 

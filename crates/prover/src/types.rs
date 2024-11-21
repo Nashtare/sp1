@@ -169,7 +169,7 @@ pub enum SP1Bn254ProofData {
 }
 
 impl SP1Bn254ProofData {
-    pub fn get_proof_system(&self) -> ProofSystem {
+    pub const fn get_proof_system(&self) -> ProofSystem {
         match self {
             SP1Bn254ProofData::Plonk(_) => ProofSystem::Plonk,
             SP1Bn254ProofData::Groth16(_) => ProofSystem::Groth16,
@@ -201,7 +201,7 @@ pub enum ProofSystem {
 }
 
 impl ProofSystem {
-    pub fn as_str(&self) -> &'static str {
+    pub const fn as_str(&self) -> &'static str {
         match self {
             ProofSystem::Plonk => "Plonk",
             ProofSystem::Groth16 => "Groth16",

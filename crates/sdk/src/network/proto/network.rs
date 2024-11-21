@@ -297,7 +297,7 @@ impl ProofMode {
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
+    pub const fn as_str_name(&self) -> &'static str {
         match self {
             Self::Unspecified => "PROOF_MODE_UNSPECIFIED",
             Self::Core => "PROOF_MODE_CORE",
@@ -352,7 +352,7 @@ impl ProofStatus {
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
+    pub const fn as_str_name(&self) -> &'static str {
         match self {
             Self::ProofUnspecifiedStatus => "PROOF_UNSPECIFIED_STATUS",
             Self::ProofPreparing => "PROOF_PREPARING",
@@ -409,7 +409,7 @@ impl TransactionStatus {
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
+    pub const fn as_str_name(&self) -> &'static str {
         match self {
             Self::TransactionUnspecifiedStatus => "TRANSACTION_UNSPECIFIED_STATUS",
             Self::TransactionScheduled => "TRANSACTION_SCHEDULED",
@@ -459,7 +459,7 @@ impl UnclaimReason {
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
+    pub const fn as_str_name(&self) -> &'static str {
         match self {
             Self::Unspecified => "UNCLAIM_REASON_UNSPECIFIED",
             Self::Invalid => "UNCLAIM_REASON_INVALID",

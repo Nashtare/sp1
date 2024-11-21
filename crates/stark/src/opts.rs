@@ -69,7 +69,7 @@ fn shard_size(total_available_mem: u64) -> usize {
 /// For machines with a very large amount of memory, we can use batch size 8. Empirically,
 /// going above 8 doesn't result in a significant speedup.
 /// For most machines, we can just use batch size 4.
-fn shard_batch_size(total_available_mem: u64) -> usize {
+const fn shard_batch_size(total_available_mem: u64) -> usize {
     match total_available_mem {
         0..=16 => 1,
         17..=48 => 2,
@@ -149,7 +149,7 @@ pub struct SplitOpts {
 impl SplitOpts {
     /// Create a new [`SplitOpts`] with the given threshold.
     #[must_use]
-    pub fn new(deferred_shift_threshold: usize) -> Self {
+    pub const fn new(deferred_shift_threshold: usize) -> Self {
         Self {
             deferred: deferred_shift_threshold,
             keccak: deferred_shift_threshold / 24,

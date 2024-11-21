@@ -25,7 +25,7 @@ pub struct Groth16Bn254Prover;
 /// A prover that can generate proofs with the Groth16 protocol using bindings to Gnark.
 impl Groth16Bn254Prover {
     /// Creates a new [Groth16Bn254Prover].
-    pub fn new() -> Self {
+    pub const fn new() -> Self {
         Self
     }
 

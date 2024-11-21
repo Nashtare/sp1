@@ -482,7 +482,7 @@ impl<F: PrimeField32> RiscvAir<F> {
             .collect()
     }
 
-    pub(crate) fn rows_per_event(&self) -> usize {
+    pub(crate) const fn rows_per_event(&self) -> usize {
         match self {
             Self::Sha256Compress(_) => 80,
             Self::Sha256Extend(_) => 48,

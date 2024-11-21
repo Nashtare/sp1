@@ -48,7 +48,7 @@ impl AffinePoint<N> for Ed25519AffinePoint {
 impl Ed25519AffinePoint {
     const IDENTITY: [u32; N] = [0; N];
 
-    pub fn identity() -> Self {
+    pub const fn identity() -> Self {
         Self(Self::IDENTITY)
     }
 }

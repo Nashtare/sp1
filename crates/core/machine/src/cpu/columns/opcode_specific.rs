@@ -40,31 +40,31 @@ impl<T: Copy + Debug> Debug for OpcodeSpecificCols<T> {
 
 // SAFETY: Each view is a valid interpretation of the underlying array.
 impl<T: Copy> OpcodeSpecificCols<T> {
-    pub fn memory(&self) -> &MemoryColumns<T> {
+    pub const fn memory(&self) -> &MemoryColumns<T> {
         unsafe { &self.memory }
     }
     pub fn memory_mut(&mut self) -> &mut MemoryColumns<T> {
         unsafe { &mut self.memory }
     }
-    pub fn branch(&self) -> &BranchCols<T> {
+    pub const fn branch(&self) -> &BranchCols<T> {
         unsafe { &self.branch }
     }
     pub fn branch_mut(&mut self) -> &mut BranchCols<T> {
         unsafe { &mut self.branch }
     }
-    pub fn jump(&self) -> &JumpCols<T> {
+    pub const fn jump(&self) -> &JumpCols<T> {
         unsafe { &self.jump }
     }
     pub fn jump_mut(&mut self) -> &mut JumpCols<T> {
         unsafe { &mut self.jump }
     }
-    pub fn auipc(&self) -> &AuipcCols<T> {
+    pub const fn auipc(&self) -> &AuipcCols<T> {
         unsafe { &self.auipc }
     }
     pub fn auipc_mut(&mut self) -> &mut AuipcCols<T> {
         unsafe { &mut self.auipc }
     }
-    pub fn ecall(&self) -> &EcallCols<T> {
+    pub const fn ecall(&self) -> &EcallCols<T> {
         unsafe { &self.ecall }
     }
     pub fn ecall_mut(&mut self) -> &mut EcallCols<T> {

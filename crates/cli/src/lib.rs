@@ -30,7 +30,7 @@ pub async fn url_exists(client: &Client, url: &str) -> bool {
 }
 
 #[allow(unreachable_code)]
-pub fn is_supported_target() -> bool {
+pub const fn is_supported_target() -> bool {
     #[cfg(all(target_arch = "x86_64", target_os = "linux"))]
     return true;
 

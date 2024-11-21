@@ -1,3 +1,5 @@
+#![allow(clippy::missing_const_for_fn)]
+
 mod bigint;
 mod bls12381;
 mod bn254;

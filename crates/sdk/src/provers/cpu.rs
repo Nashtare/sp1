@@ -24,7 +24,7 @@ impl CpuProver {
     }
 
     /// Creates a new [LocalProver] from an existing [SP1Prover].
-    pub fn from_prover(prover: SP1Prover<DefaultProverComponents>) -> Self {
+    pub const fn from_prover(prover: SP1Prover<DefaultProverComponents>) -> Self {
         Self { prover }
     }
 }

@@ -8,7 +8,7 @@ pub struct TurnBasedSync {
 
 impl TurnBasedSync {
     /// Creates a new [TurnBasedSync].
-    pub fn new() -> Self {
+    pub const fn new() -> Self {
         TurnBasedSync { current_turn: Mutex::new(0), cv: Condvar::new() }
     }
 

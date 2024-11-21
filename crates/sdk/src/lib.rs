@@ -330,7 +330,7 @@ pub struct ProverClientBuilder {
 
 impl ProverClientBuilder {
     /// Sets the mode of the prover client being created.
-    pub fn mode(mut self, mode: ProverMode) -> Self {
+    pub const fn mode(mut self, mode: ProverMode) -> Self {
         self.mode = Some(mode);
         self
     }
@@ -348,7 +348,7 @@ impl ProverClientBuilder {
     }
 
     /// Skips simulation.
-    pub fn skip_simulation(mut self) -> Self {
+    pub const fn skip_simulation(mut self) -> Self {
         self.skip_simulation = true;
         self
     }
@@ -398,7 +398,7 @@ pub struct NetworkProverBuilder {
 }
 
 impl NetworkProverBuilder {
-    ///  Sets the private key.
+    /// Sets the private key.
     pub fn private_key(mut self, private_key: String) -> Self {
         self.private_key = Some(private_key);
         self
@@ -411,7 +411,7 @@ impl NetworkProverBuilder {
     }
 
     /// Skips simulation.
-    pub fn skip_simulation(mut self) -> Self {
+    pub const fn skip_simulation(mut self) -> Self {
         self.skip_simulation = true;
         self
     }

@@ -211,7 +211,7 @@ impl SyscallCode {
     /// Map a syscall to another one in order to coalesce their counts.
     #[must_use]
     #[allow(clippy::match_same_arms)]
-    pub fn count_map(&self) -> Self {
+    pub const fn count_map(&self) -> Self {
         match self {
             SyscallCode::BN254_FP_SUB => SyscallCode::BN254_FP_ADD,
             SyscallCode::BN254_FP_MUL => SyscallCode::BN254_FP_ADD,
